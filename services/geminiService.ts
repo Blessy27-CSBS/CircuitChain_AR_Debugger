@@ -37,7 +37,8 @@ export async function analyzeCircuit(
   imageData: string,
   schematic: string
 ): Promise<CircuitAnalysisResult> {
-  const apiKey = import.meta.env.VITE_API_KEY || "";
+  // SECURITY WARNING: Hardcoded API Key is not recommended for production.
+  const apiKey = "AIzaSyBfTjGxKod2485axbwsXgbgaaRw2vszm08";
   const ai = new GoogleGenAI({ apiKey });
 
   const response = await ai.models.generateContent({
