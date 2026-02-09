@@ -1,6 +1,6 @@
-# Circuit-Chan Vision Brain: AR Circuit Debugger
+# Circuit-Chan Vision Brain: AR Circuit Debugger (Powered by Gemini 3)
 
-Circuit-Chan Vision is an AR-powered electronics engineer that acts as a "second pair of eyes" for debugging breadboards and PCBs. Using Gemini's multimodal vision, it visually identifies components, predicts logic states, and detects wiring faults in real-time.
+Circuit-Chan Vision is a state-of-the-art AR-powered electronics engineer that acts as a "second pair of eyes" for debugging breadboards and PCBs. Empowered by **Gemini 3**, it visually identifies components, predicts logic states, and detects wiring faults in real-time.
 
 ## 🚀 Features
 - **AR Breadboard Analysis**: Instantly identifies ICs, resistors (via color bands), LEDs, and capacitors.
