@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit-Chan Vision | AR Debugger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --pink-primary: #ff8da1;
+        --pink-light: #fffafb;
+        --pink-border: #ffd1dc;
+        --blue-accent: #60a5fa;
+      }
+      body {
+        font-family: 'Fredoka', sans-serif;
+        background-color: var(--pink-light);
+        overflow-x: hidden;
+      }
+      .mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      /* Anime Animations */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(2deg); }
+      }
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 5px var(--pink-border); }
+        50% { box-shadow: 0 0 20px var(--pink-primary); }
+      }
+      @keyframes scroll-bg {
+        from { background-position: 0 0; }
+        to { background-position: 60px 60px; }
+      }
+      @keyframes slide-up {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+
+      .animate-float { animation: float 4s ease-in-out infinite; }
+      .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+      .animate-slide-up { animation: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+      /* UI Elements */
+      .circuit-bg {
+        background-image: radial-gradient(var(--pink-border) 1.5px, transparent 1.5px);
+        background-size: 30px 30px;
+        animation: scroll-bg 10s linear infinite;
+      }
+      .anime-card {
+        background: rgba(255, 255, 255, 0.95);
+        border: 4px solid var(--pink-border);
+        border-radius: 2.5rem;
+        box-shadow: 0 12px 0 var(--pink-border);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .anime-card:hover {
+        transform: translateY(-2px);
+      }
+      .anime-btn {
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 3px solid transparent;
+      }
+      .anime-btn:active {
+        transform: translateY(6px);
+        box-shadow: none !important;
+      }
+      .terminal-window {
+        background: #1e293b;
+        color: #94a3b8;
+        border-radius: 1.5rem;
+        border-bottom: 4px solid #0f172a;
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: var(--pink-light); }
+      ::-webkit-scrollbar-thumb { background: var(--pink-border); border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--pink-primary); }
+
+      /* Layout Utilities */
+      .glass-morphism {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="circuit-bg min-h-screen">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

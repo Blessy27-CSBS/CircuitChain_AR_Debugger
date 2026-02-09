@@ -1,0 +1,8 @@
+
+{
+  "name": "Circuit-Chan Vision: AR Debugger",
+  "description": "An AI-powered AR electronics debugger that analyzes circuit breadboards and PCBs for faults using a 'Vision Brain' logic.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
